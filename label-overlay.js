@@ -12,8 +12,17 @@ rapidsms.maps = rapidsms.maps || {};
 		this.paneName  = "overlayLayer";
 		this.className = "label";
 		this.html      = null;
-
+		this.minZoom   = 8;
+		this.maxZoom   = 99;
 		this.setValues(options);
+
+		this.is_visible = function() {
+			var z = this.map.getZoom();
+
+			return (
+				(this.minZoom <= z) &&
+				(this.maxZoom >= z));
+		};
 	};
 
 	namespace.Label.prototype =
@@ -45,6 +54,12 @@ rapidsms.maps = rapidsms.maps || {};
 	};
 
 	namespace.Label.prototype.draw = function() {
+		if(!this.is_visible()) {
+			this.wrapper_.style.display = "none";
+			return false;
+		}
+
+		this.wrapper_.style.display = "block";
 		var position = this.getProjection().fromLatLngToDivPixel(this.position);
 		this.wrapper_.style.left = (position.x - parseInt(this.wrapper_.offsetWidth / 2)) + "px";
 		this.wrapper_.style.top  = position.y + "px";
