@@ -50,19 +50,43 @@
 		</footer>
 
 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="label-overlay.js"></script>
 
 		<script>
-			var latlon_kampala = new google.maps.LatLng(
-				0.313611, 32.581111);
+			(function() {
 
-			var map_opts = {
-				"mapTypeId": google.maps.MapTypeId.TERRAIN,
-				"center": latlon_kampala,
-				"zoom": 6 };
+				/* home sweet home */
+				var latlng_kampala = new google.maps.LatLng(
+					0.313611, 32.581111);
 
-			var map = new google.maps.Map(
-				document.getElementById("map"),
-				map_opts);
+				var map_opts = {
+					"mapTypeId": google.maps.MapTypeId.TERRAIN,
+					"center": latlng_kampala,
+					"zoom": 6 };
+
+				var map = new google.maps.Map(
+					document.getElementById("map"),
+					map_opts);
+
+				new rapidsms.maps.Label({
+					"position": new google.maps.LatLng(3.288889, 32.877778),
+					"html": "Kitgum",
+					"map": map
+				});
+
+				new rapidsms.maps.Label({
+					"position": new google.maps.LatLng(2.766667, 32.266667),
+					"html": "Gulu",
+					"map": map
+				});
+
+				new rapidsms.maps.Label({
+					"position": latlng_kampala,
+					"className": "capital",
+					"html": "Kampala",
+					"map": map
+				});
+			})();
 		</script>
 	</body>
 </html>
