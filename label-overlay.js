@@ -14,7 +14,7 @@ rapidsms.maps = rapidsms.maps || {};
         this.html      = null;
         this.minZoom   = 8;
         this.maxZoom   = 99;
-        this.direction = "above";
+        this.direction = namespace.Label.Direction.ABOVE;
         this.setValues(options);
 
         this.is_visible = function() {
@@ -26,26 +26,33 @@ rapidsms.maps = rapidsms.maps || {};
         };
 
         this.get_left = function(position) {
-            if ((this.direction == "above") || (this.direction == "below"))
+            if ((this.direction == namespace.Label.Direction.ABOVE) || (this.direction == namespace.Label.Direction.BELOW))
                 return (position.x - parseInt(this.wrapper_.offsetWidth / 2));
 
-            else if (this.direction == "left")
+            else if (this.direction == namespace.Label.Direction.LEFT)
                 return position.x - parseInt(this.wrapper_.offsetWidth);
 
-            else if (this.direction == "right")
+            else if (this.direction == namespace.Label.Direction.RIGHT)
                 return position.x;
         };
 
         this.get_top = function(position) {
-            if ((this.direction == "left") || (this.direction == "right"))
+            if ((this.direction == namespace.Label.Direction.LEFT) || (this.direction == namespace.Label.Direction.RIGHT))
                 return (position.y - parseInt(this.wrapper_.offsetHeight / 2));
 
-            else if (this.direction == "above")
+            else if (this.direction == namespace.Label.Direction.ABOVE)
                 return position.y - parseInt(this.wrapper_.offsetHeight);
 
-            else if (this.direction == "below")
+            else if (this.direction == namespace.Label.Direction.BELOW)
                 return position.y;
         };
+    };
+
+    namespace.Label.Direction = {
+        "ABOVE": "above",
+        "RIGHT": "right",
+        "BELOW": "below",
+        "LEFT":  "left"
     };
 
     namespace.Label.prototype =

@@ -73,7 +73,7 @@
                 (function() {
                     new rapidsms.maps.Label({
                         "position": new google.maps.LatLng(3.288889, 32.877778),
-                        "direction": "right",
+                        "direction": rapidsms.maps.Label.Direction.RIGHT,
                         "html": "Kitgum",
                         "minZoom": 7,
                         "map": map
@@ -81,7 +81,7 @@
 
                     new rapidsms.maps.Label({
                         "position": new google.maps.LatLng(2.766667, 32.266667),
-                        "direction": "left",
+                        "direction": rapidsms.maps.Label.Direction.LEFT,
                         "html": "Gulu",
                         "minZoom": 7,
                         "map": map
@@ -89,7 +89,7 @@
 
                     new rapidsms.maps.Label({
                         "position": new google.maps.LatLng(2.53, 34.67),
-                        "direction": "below",
+                        "direction": rapidsms.maps.Label.Direction.BELOW,
                         "html": "Moroto",
                         "minZoom": 7,
                         "map": map
@@ -98,7 +98,7 @@
                     new rapidsms.maps.Label({
                         "position": latlng_kampala,
                         "className": "capital",
-                        "direction": "above",
+                        "direction": rapidsms.maps.Label.Direction.ABOVE,
                         "html": "Kampala",
                         "minZoom": 5,
                         "map": map
