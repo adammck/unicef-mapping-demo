@@ -2,26 +2,15 @@
 
 
 div.label-wrapper {
-}
+    position: absolute; }
 
-    div.label-wrapper div.arrow {
-        position: absolute;
-        background: url(arrows/up.png) no-repeat;
-        margin-left: -6px;
-        left: 50%;
-        width: 13px;
-        height: 13px;
-    }
 
     div.label-wrapper div.label {
         background: #fff;
         border: 1px solid #000;
         font-weight: bold;
-        padding: 5px;
+        padding: 6px;
         color: #000;
-
-        /* make space for the arrow */
-        margin-top: 12px;
 
         /* firefox */
         -moz-box-shadow: 1px 1px 4px #000;
@@ -31,3 +20,32 @@ div.label-wrapper {
         -webkit-box-shadow: 1px 1px 4px #000;
         -webkit-border-radius: 7px;
     }
+
+        div.label-wrapper.above div.label { margin-bottom: 12px; }
+        div.label-wrapper.right div.label { margin-left:   12px; }
+        div.label-wrapper.below div.label { margin-top:    12px; }
+        div.label-wrapper.left  div.label { margin-right:  12px; }
+
+
+    div.label-wrapper div.arrow {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+    }
+
+        div.label-wrapper.above div.arrow { background-image: url(arrows/down.png);  bottom: 0; }
+        div.label-wrapper.right div.arrow { background-image: url(arrows/left.png);  left:   0; }
+        div.label-wrapper.below div.arrow { background-image: url(arrows/up.png);    top:    0; }
+        div.label-wrapper.left  div.arrow { background-image: url(arrows/right.png); right:  0; }
+
+        div.label-wrapper.above div.arrow,
+        div.label-wrapper.below div.arrow {
+            margin-left: -6px;
+            left: 50%;
+        }
+
+        div.label-wrapper.left div.arrow,
+        div.label-wrapper.right div.arrow {
+            margin-top: -6px;
+            top: 50%;
+        }

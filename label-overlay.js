@@ -14,6 +14,7 @@ rapidsms.maps = rapidsms.maps || {};
         this.html      = null;
         this.minZoom   = 8;
         this.maxZoom   = 99;
+        this.direction = "above";
         this.setValues(options);
 
         this.is_visible = function() {
@@ -23,6 +24,28 @@ rapidsms.maps = rapidsms.maps || {};
                 (this.minZoom <= z) &&
                 (this.maxZoom >= z));
         };
+
+        this.get_left = function(position) {
+            if ((this.direction == "above") || (this.direction == "below"))
+                return (position.x - parseInt(this.wrapper_.offsetWidth / 2));
+
+            else if (this.direction == "left")
+                return position.x - parseInt(this.wrapper_.offsetWidth);
+
+            else if (this.direction == "right")
+                return position.x;
+        };
+
+        this.get_top = function(position) {
+            if ((this.direction == "left") || (this.direction == "right"))
+                return (position.y - parseInt(this.wrapper_.offsetHeight / 2));
+
+            else if (this.direction == "above")
+                return position.y - parseInt(this.wrapper_.offsetHeight);
+
+            else if (this.direction == "below")
+                return position.y;
+        };
     };
 
     namespace.Label.prototype =
@@ -30,8 +53,7 @@ rapidsms.maps = rapidsms.maps || {};
 
     namespace.Label.prototype.onAdd = function() {
         this.wrapper_ = document.createElement("div");
-        this.wrapper_.style.position = "absolute";
-        this.wrapper_.className = "label-wrapper";
+        this.wrapper_.className = "label-wrapper " + this.direction;
 
         this.arrow_ = document.createElement("div");
         this.arrow_.className = "arrow";
@@ -61,7 +83,7 @@ rapidsms.maps = rapidsms.maps || {};
 
         this.wrapper_.style.display = "block";
         var position = this.getProjection().fromLatLngToDivPixel(this.position);
-        this.wrapper_.style.left = (position.x - parseInt(this.wrapper_.offsetWidth / 2)) + "px";
-        this.wrapper_.style.top  = position.y + "px";
+        this.wrapper_.style.left = this.get_left(position) + "px";
+        this.wrapper_.style.top = this.get_top(position) + "px";
     };
 })(rapidsms.maps);

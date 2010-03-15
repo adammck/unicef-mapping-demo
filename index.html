@@ -64,33 +64,46 @@
                 var map_opts = {
                     "mapTypeId": google.maps.MapTypeId.TERRAIN,
                     "center": latlng_kampala,
-                    "zoom": 6 };
+                    "zoom": 3 };
 
                 var map = new google.maps.Map(
                     document.getElementById("map"),
                     map_opts);
 
-                new rapidsms.maps.Label({
-                    "position": new google.maps.LatLng(3.288889, 32.877778),
-                    "html": "Kitgum",
-                    "minZoom": 7,
-                    "map": map
-                });
+                (function() {
+                    new rapidsms.maps.Label({
+                        "position": new google.maps.LatLng(3.288889, 32.877778),
+                        "direction": "right",
+                        "html": "Kitgum",
+                        "minZoom": 7,
+                        "map": map
+                    });
 
-                new rapidsms.maps.Label({
-                    "position": new google.maps.LatLng(2.766667, 32.266667),
-                    "html": "Gulu",
-                    "minZoom": 7,
-                    "map": map
-                });
+                    new rapidsms.maps.Label({
+                        "position": new google.maps.LatLng(2.766667, 32.266667),
+                        "direction": "left",
+                        "html": "Gulu",
+                        "minZoom": 7,
+                        "map": map
+                    });
 
-                new rapidsms.maps.Label({
-                    "position": latlng_kampala,
-                    "className": "capital",
-                    "html": "Kampala",
-                    "minZoom": 5,
-                    "map": map
-                });
+                    new rapidsms.maps.Label({
+                        "position": new google.maps.LatLng(2.53, 34.67),
+                        "direction": "below",
+                        "html": "Moroto",
+                        "minZoom": 7,
+                        "map": map
+                    });
+
+                    new rapidsms.maps.Label({
+                        "position": latlng_kampala,
+                        "className": "capital",
+                        "direction": "above",
+                        "html": "Kampala",
+                        "minZoom": 5,
+                        "map": map
+                    });
+                })();
             })();
         </script>
     </body>
