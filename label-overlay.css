@@ -21,16 +21,16 @@ div.label-wrapper {
         -webkit-border-radius: 7px;
     }
 
-        div.label-wrapper.above div.label { margin-bottom: 12px; }
-        div.label-wrapper.right div.label { margin-left:   12px; }
-        div.label-wrapper.below div.label { margin-top:    12px; }
-        div.label-wrapper.left  div.label { margin-right:  12px; }
+        div.label-wrapper.above div.label { margin-bottom: 8px; }
+        div.label-wrapper.right div.label { margin-left:   8px; }
+        div.label-wrapper.below div.label { margin-top:    8px; }
+        div.label-wrapper.left  div.label { margin-right:  8px; }
 
 
     div.label-wrapper div.arrow {
         position: absolute;
-        width: 13px;
-        height: 13px;
+        width: 9px;
+        height: 9px;
     }
 
         div.label-wrapper.above div.arrow { background-image: url(arrows/down.png);  bottom: 0; }
@@ -40,12 +40,12 @@ div.label-wrapper {
 
         div.label-wrapper.above div.arrow,
         div.label-wrapper.below div.arrow {
-            margin-left: -6px;
+            margin-left: -4px;
             left: 50%;
         }
 
         div.label-wrapper.left div.arrow,
         div.label-wrapper.right div.arrow {
-            margin-top: -6px;
+            margin-top: -4px;
             top: 50%;
         }
