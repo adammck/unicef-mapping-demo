@@ -1,14 +1,17 @@
+/* vim:set et ts=4 sw=4 */
+
+
 /* reset a few things */
 
 body, h1, p, ul {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-	font: 9pt verdana, sans-serif;
-	line-height: 1;
-	color: #ccc;
+    font: 9pt verdana, sans-serif;
+    line-height: 1;
+    color: #ccc;
 }
 
 
@@ -17,14 +20,14 @@ body {
 /* global link style */
 
 a {
-	text-decoration: none;
-	color: #87cfff;
+    text-decoration: none;
+    color: #87cfff;
 }
 
-	a:hover {
-		text-shadow: 0 0 5px #aef;
-		color: #09f;
-	}
+    a:hover {
+        text-shadow: 0 0 5px #aef;
+        color: #09f;
+    }
 
 
 
@@ -32,9 +35,9 @@ a {
 /* maximize the viewport */
 
 html, body {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 
@@ -44,24 +47,24 @@ html, body {
 * (the actual sizes come later) */
 
 header, footer, #map {
-	position: absolute;
-	display: block;
-	left: 0;
-	right: 0;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
 }
 
 /* set the map placeholder to the color of the google maps background,
  * to avoid the flash of white while we're waiting for the script */
 #map {
-	background: #e5e3df;
-	color: #000;
+    background: #e5e3df;
+    color: #000;
 }
 
-	#map div.loading {
-		text-align: center;
-		margin-top: 2em;
-		color: #aaa;
-	}
+    #map div.loading {
+        text-align: center;
+        margin-top: 2em;
+        color: #aaa;
+    }
 
 
 
@@ -83,61 +86,61 @@ header, footer, #map {
  * 46px + 2.5em */
 
 #map {
-	top: 2.5em;
-	margin-top: 46px;
+    top: 2.5em;
+    margin-top: 46px;
 }
 
 header {
-	top: 0;
-	padding: 0.5em;
-	margin-bottom: 1px;
-	border-bottom: 1px solid #09f;
+    top: 0;
+    padding: 0.5em;
+    margin-bottom: 1px;
+    border-bottom: 1px solid #09f;
 }
 
-	header h1 { }
+    header h1 { }
 
-		header h1 a {
-			padding-top: 44px;
-			overflow: hidden;
-			width: 183px;
-			height: 0;
-		}
+        header h1 a {
+            padding-top: 44px;
+            overflow: hidden;
+            width: 183px;
+            height: 0;
+        }
 
-			header h1 a.site {
-				background: url(site-logo.png) no-repeat;
-				float: left;
-			}
+            header h1 a.site {
+                background: url(site-logo.png) no-repeat;
+                float: left;
+            }
 
-			header h1 a.unicef {
-				background: url(unicef-logo.png) no-repeat;
-				float: right;
-			}
+            header h1 a.unicef {
+                background: url(unicef-logo.png) no-repeat;
+                float: right;
+            }
 
-	header nav {
-		text-transform: lowercase;
-		margin-top: 0.5em;
-	}
+    header nav {
+        text-transform: lowercase;
+        margin-top: 0.5em;
+    }
 
-		header nav li {
-			display: block;
-			float: left;
-		}
+        header nav li {
+            display: block;
+            float: left;
+        }
 
-	header nav.site {
-		float: left;
-		clear: left;
-	}
+    header nav.site {
+        float: left;
+        clear: left;
+    }
 
-		header nav.site li {
-			margin-right: 1em; }
+        header nav.site li {
+            margin-right: 1em; }
 
-	header nav.unicef {
-		float: right;
-		clear: right;
-	}
+    header nav.unicef {
+        float: right;
+        clear: right;
+    }
 
-		header nav.unicef li {
-			margin-left: 1em; }
+        header nav.unicef li {
+            margin-left: 1em; }
 
 
 
@@ -146,59 +149,59 @@ header {
 /* footer */
 
 #map {
-	bottom: 4em;
-	margin-bottom: 2px;
+    bottom: 4em;
+    margin-bottom: 2px;
 }
 
 footer {
-	bottom: 0;
-	height: 4em;
-	border-top: 1px solid #09f;
+    bottom: 0;
+    height: 4em;
+    border-top: 1px solid #09f;
 }
 
-	footer ul.breadcrumbs {
-		font-size: 200%;
-		float: left;
-		padding: 0;
-		margin: 0;
-	}
+    footer ul.breadcrumbs {
+        font-size: 200%;
+        float: left;
+        padding: 0;
+        margin: 0;
+    }
 
-		footer ul.breadcrumbs li {
-			display: block;
-			float: left;
-		}
+        footer ul.breadcrumbs li {
+            display: block;
+            float: left;
+        }
 
-		footer ul.breadcrumbs li a {
-			margin: 0 0.5em;
-			display: block;
-			float: left;
+        footer ul.breadcrumbs li a {
+            margin: 0 0.5em;
+            display: block;
+            float: left;
 
-			/* center-align the text in the footer with borders and padding,
-			 * ready to makethe border-color visible when active */
-			border-bottom: 0.25em solid #fff;
-			border-top: 0.25em solid #fff;
-			padding: 0.25em 0;
-		}
+            /* center-align the text in the footer with borders and padding,
+             * ready to makethe border-color visible when active */
+            border-bottom: 0.25em solid #fff;
+            border-top: 0.25em solid #fff;
+            padding: 0.25em 0;
+        }
 
-			footer ul.breadcrumbs li.active a {
-				border-bottom-color: #09f;
-				border-top-color: #09f;
-			}
+            footer ul.breadcrumbs li.active a {
+                border-bottom-color: #09f;
+                border-top-color: #09f;
+            }
 
-		/* arrows are hard-coded, for now */
-		footer ul.breadcrumbs span {
-			line-height: 2;
-			display: block;
-			float: left;
-			color: #aef;
-		}
+        /* arrows are hard-coded, for now */
+        footer ul.breadcrumbs span {
+            line-height: 2;
+            display: block;
+            float: left;
+            color: #aef;
+        }
 
-	footer p.copyright {
-		text-align: right;
-		float: right;
+    footer p.copyright {
+        text-align: right;
+        float: right;
 
-		/* two lines of text
-		 * = 3em total height */
-		line-height: 1.5;
-		padding: 0.5em;
-	}
+        /* two lines of text
+         * = 3em total height */
+        line-height: 1.5;
+        padding: 0.5em;
+    }

@@ -1,96 +1,97 @@
 <!doctype html>
+<!-- vim:set et ts=4 sw=4 -->
 
 <html>
-	<head>
-		<title>UNICEF - Project Mapping and Regional Information Tool</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" href="label-overlay.css">
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<header>
-			<h1>
-				<a href="http://unicef.org" class="unicef" tabindex="5">UNICEF</a>
-				<a href="/" class="site" tabindex="1">Project mapping and regional information</a>
-			</h1>
-			<nav class="site">
-				<ul>
-					<li><a href="" tabindex="2">Log in</a></li>
-					<li><a href="" tabindex="3">Create account</a></li>
-					<li><a href="" tabindex="4">Why?</a></li>
-				</ul>
-			</nav>
-			<nav class="unicef">
-				<ul>
-					<li><a href="" tabindex="6">About us</a></li>
-					<li><a href="" tabindex="7">Contact us</a></li>
-					<li><a href="" tabindex="8">Legal</a></li>
-				</ul>
-			</nav>
-		</header>
+    <head>
+        <title>UNICEF - Project Mapping and Regional Information Tool</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="label-overlay.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>
+                <a href="http://unicef.org" class="unicef" tabindex="5">UNICEF</a>
+                <a href="/" class="site" tabindex="1">Project mapping and regional information</a>
+            </h1>
+            <nav class="site">
+                <ul>
+                    <li><a href="" tabindex="2">Log in</a></li>
+                    <li><a href="" tabindex="3">Create account</a></li>
+                    <li><a href="" tabindex="4">Why?</a></li>
+                </ul>
+            </nav>
+            <nav class="unicef">
+                <ul>
+                    <li><a href="" tabindex="6">About us</a></li>
+                    <li><a href="" tabindex="7">Contact us</a></li>
+                    <li><a href="" tabindex="8">Legal</a></li>
+                </ul>
+            </nav>
+        </header>
 
-		<div id="map"></div>
+        <div id="map"></div>
 
-		<script>
-			document.getElementById("map").innerHTML =
-				'<div class="loading">Please wait while the Google map loads...</div>';
-		</script>
+        <script>
+            document.getElementById("map").innerHTML =
+                '<div class="loading">Please wait while the Google map loads...</div>';
+        </script>
 
-		<footer>
-			<ul class="breadcrumbs">
-				<li><a href="">Planet Earth</a></li>
-				<li><span>&#10140;</span><a href="">Africa</a></li>
-				<li class="active"><span>&#10140;</span><a href="">Uganda</a></li>
-			</ul>
+        <footer>
+            <ul class="breadcrumbs">
+                <li><a href="">Planet Earth</a></li>
+                <li><span>&#10140;</span><a href="">Africa</a></li>
+                <li class="active"><span>&#10140;</span><a href="">Uganda</a></li>
+            </ul>
 
-			<p class="copyright">
-				This mapping demo is &copy; <a href="http://github.com/adammck">Adam Mckaig</a> 2009<br />
-				<a href="http://github.com/adammck/google-maps-v3-label">Source code</a>
-				is available under <a href="">the BSD license</a>.
-			</div>
-		</footer>
+            <p class="copyright">
+                This mapping demo is &copy; <a href="http://github.com/adammck">Adam Mckaig</a> 2009<br />
+                <a href="http://github.com/adammck/google-maps-v3-label">Source code</a>
+                is available under <a href="">the BSD license</a>.
+            </div>
+        </footer>
 
-		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="label-overlay.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="label-overlay.js"></script>
 
-		<script>
-			(function() {
+        <script>
+            (function() {
 
-				/* home sweet home */
-				var latlng_kampala = new google.maps.LatLng(
-					0.313611, 32.581111);
+                /* home sweet home */
+                var latlng_kampala = new google.maps.LatLng(
+                    0.313611, 32.581111);
 
-				var map_opts = {
-					"mapTypeId": google.maps.MapTypeId.TERRAIN,
-					"center": latlng_kampala,
-					"zoom": 6 };
+                var map_opts = {
+                    "mapTypeId": google.maps.MapTypeId.TERRAIN,
+                    "center": latlng_kampala,
+                    "zoom": 6 };
 
-				var map = new google.maps.Map(
-					document.getElementById("map"),
-					map_opts);
+                var map = new google.maps.Map(
+                    document.getElementById("map"),
+                    map_opts);
 
-				new rapidsms.maps.Label({
-					"position": new google.maps.LatLng(3.288889, 32.877778),
-					"html": "Kitgum",
-					"minZoom": 7,
-					"map": map
-				});
+                new rapidsms.maps.Label({
+                    "position": new google.maps.LatLng(3.288889, 32.877778),
+                    "html": "Kitgum",
+                    "minZoom": 7,
+                    "map": map
+                });
 
-				new rapidsms.maps.Label({
-					"position": new google.maps.LatLng(2.766667, 32.266667),
-					"html": "Gulu",
-					"minZoom": 7,
-					"map": map
-				});
+                new rapidsms.maps.Label({
+                    "position": new google.maps.LatLng(2.766667, 32.266667),
+                    "html": "Gulu",
+                    "minZoom": 7,
+                    "map": map
+                });
 
-				new rapidsms.maps.Label({
-					"position": latlng_kampala,
-					"className": "capital",
-					"html": "Kampala",
-					"minZoom": 5,
-					"map": map
-				});
-			})();
-		</script>
-	</body>
+                new rapidsms.maps.Label({
+                    "position": latlng_kampala,
+                    "className": "capital",
+                    "html": "Kampala",
+                    "minZoom": 5,
+                    "map": map
+                });
+            })();
+        </script>
+    </body>
 </html>
