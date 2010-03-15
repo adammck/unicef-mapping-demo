@@ -63,41 +63,6 @@ header, footer, #map {
 		color: #aaa;
 	}
 
-	#map div.label-wrapper {
-	}
-
-		#map div.arrow {
-			position: absolute;
-			background: url(arrows/up.png) no-repeat;
-			margin-left: -6px;
-			left: 50%;
-			width: 13px;
-			height: 13px;
-		}
-
-		#map div.label {
-			background: #fff;
-			border: 1px solid #000;
-			font-weight: bold;
-			padding: 5px;
-			color: #000;
-
-			/* make space for the arrow */
-			margin-top: 12px;
-
-			/* firefox */
-			-moz-box-shadow: 1px 1px 4px #000;
-			-moz-border-radius: 7px;
-
-			/* chrome, safari */
-			-webkit-box-shadow: 1px 1px 4px #000;
-			-webkit-border-radius: 7px;
-		}
-
-		#map div.label.capital {
-			color: #a00;
-		}
-
 
 
 
