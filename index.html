@@ -56,15 +56,10 @@
 
         <script>
             (function() {
-
-                /* home sweet home */
-                var latlng_kampala = new google.maps.LatLng(
-                    0.313611, 32.581111);
-
                 var map_opts = {
                     "mapTypeId": google.maps.MapTypeId.TERRAIN,
-                    "center": latlng_kampala,
-                    "zoom": 3 };
+                    "center": new google.maps.LatLng(0.4, 26),
+                    "zoom": 6 };
 
                 var map = new google.maps.Map(
                     document.getElementById("map"),
@@ -98,7 +93,7 @@
                     });
 
                     new Label({
-                        "position": latlng_kampala,
+                        "position": new google.maps.LatLng(0.313611, 32.581111),
                         "className": "capital",
                         "direction": Label.Direction.ABOVE,
                         "html": "Kampala",
