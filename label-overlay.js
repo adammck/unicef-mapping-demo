@@ -9,7 +9,7 @@ rapidsms.maps = rapidsms.maps || {};
         this.content_ = null;
         this.arrow_   = null;
 
-        this.paneName  = "overlayLayer";
+        this.paneName  = "overlayImage";
         this.className = "label";
         this.html      = null;
         this.minZoom   = 8;
